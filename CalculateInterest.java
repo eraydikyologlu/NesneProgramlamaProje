@@ -8,31 +8,33 @@ package com.mycompany.mavenproject2;
  *
  * @author Casper
  */
-public class CalculateInterest {
+public class CalculateInterest extends Person{
     
     private double interest;
     private double paymentMoney;
     private double eachMonth;
+    private double interestRate;
     
     public void setInterest(String job,int salary,int installment,int demandingMoney){
         
        if(job.equals("Student")){
-        
-            interest = 1+(installment*0.0020);
-          
+            Person student = new Student();
+            interest = 1+(installment*student.getInterestRate());
+            
             }
         else if(job.equals("Worker")){
-            interest = 1+(installment*0.005);  
+            Person worker = new Worker();
+            interest = 1+(installment*worker.getInterestRate());  
             
             }
         else if(job.equals("Teacher")){
-
-            interest = 1+(installment*0.0030);
+            Person teacher = new Teacher();
+            interest = 1+(installment*teacher.getInterestRate());
            
             }
         else if(job.equals("Retired")){
-
-            interest = 1+(installment*0.0025);
+            Person retired = new Retired();
+            interest = 1+(installment*retired.getInterestRate());
             
             }
            
@@ -50,4 +52,5 @@ public class CalculateInterest {
      public double getEachMonth(){
         return eachMonth;
     }
+     
 }
