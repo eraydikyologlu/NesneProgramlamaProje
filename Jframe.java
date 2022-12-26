@@ -10,6 +10,13 @@ package com.mycompany.mavenproject2;
     import java.io.FileReader;
     import java.io.IOException;
     import java.util.ArrayList;
+import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
+
+
 /**
  *
  * @author Casper
@@ -49,8 +56,6 @@ public class Jframe extends javax.swing.JFrame {
         demandingMoney = new javax.swing.JTextField();
         job = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        tc = new javax.swing.JTextField();
         calculate = new javax.swing.JButton();
         jRadioButton1 = new javax.swing.JRadioButton();
         jRadioButton2 = new javax.swing.JRadioButton();
@@ -138,8 +143,6 @@ public class Jframe extends javax.swing.JFrame {
 
         jLabel2.setText("Your Job :");
 
-        jLabel3.setText("TC Number :");
-
         calculate.setText("Calculate");
         calculate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -170,12 +173,8 @@ public class Jframe extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(calculate))
-                    .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(28, 28, 28)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel8)
@@ -188,22 +187,21 @@ public class Jframe extends javax.swing.JFrame {
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel9)
                                     .addComponent(jLabel2))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addGap(60, 60, 60)
-                                        .addComponent(tc, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jRadioButton1)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jRadioButton2)
                                         .addGap(4, 4, 4)
                                         .addComponent(jRadioButton3)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jRadioButton4))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(job, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                                        .addComponent(jRadioButton4)
+                                        .addGap(9, 9, 9))
+                                    .addComponent(job, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(107, 107, 107)
+                        .addComponent(calculate)))
                 .addContainerGap(44, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
@@ -230,13 +228,9 @@ public class Jframe extends javax.swing.JFrame {
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(job, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(tc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(calculate)
-                .addContainerGap(25, Short.MAX_VALUE))
+                .addComponent(calculate, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(0, 190, 156));
@@ -403,7 +397,7 @@ public class Jframe extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel19))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         jPanel5.setBackground(new java.awt.Color(204, 102, 0));
@@ -482,7 +476,7 @@ public class Jframe extends javax.swing.JFrame {
                         .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(218, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -500,7 +494,7 @@ public class Jframe extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(140, Short.MAX_VALUE))
+                .addContainerGap(146, Short.MAX_VALUE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addContainerGap()
@@ -520,6 +514,7 @@ public class Jframe extends javax.swing.JFrame {
     }//GEN-LAST:event_jobActionPerformed
 
     private void calculateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calculateActionPerformed
+    
         int salary;
         int demandingMoney;
         int installment = 0;
@@ -550,7 +545,7 @@ public class Jframe extends javax.swing.JFrame {
         calculator.setInterest(job, salary, installment, demandingMoney);
         
         interestField.setText(String.valueOf(calculator.getInterest()));
-        paymentField.setText(String.valueOf(calculator.getPaymentMoney()));
+        paymentField.setText(String.valueOf((int) calculator.getPaymentMoney()));
         eachMonthField.setText(String.valueOf(calculator.getEachMonth()));
     }//GEN-LAST:event_calculateActionPerformed
 
@@ -573,32 +568,32 @@ public class Jframe extends javax.swing.JFrame {
     
         if(selectComboBox.equals("USD")){
             convertmoney.setUSD(turkishLira,USD);
-            resultField.setText(String.valueOf(convertmoney.getUSD())+" dolarınız var.");
+            resultField.setText(String.valueOf(convertmoney.getUSD())+" dolar.");
         }
         else if(selectComboBox.equals("EUR")){
                 convertmoney.setEUR(turkishLira,EUR);
-                resultField.setText(String.valueOf(convertmoney.getEUR())+" euronuz var.");
+                resultField.setText(String.valueOf(convertmoney.getEUR())+" euro.");
             }
         
         else if(selectComboBox.equals("GBP")){
                 convertmoney.setGBP(turkishLira,GBP);
-                resultField.setText(String.valueOf(convertmoney.getGBP())+" sterlininiz var.");
+                resultField.setText(String.valueOf(convertmoney.getGBP())+" sterlin.");
             }
         else if(selectComboBox.equals("Tam Altın")){
                 convertmoney.setTA(turkishLira,TA);
-                resultField.setText(String.valueOf(convertmoney.getTA())+" tam altınınız var.");
+                resultField.setText(String.valueOf(convertmoney.getTA())+" tam altın.");
             }
         else if(selectComboBox.equals("Yarım Altın")){
                 convertmoney.setYA(turkishLira,YA);
-                resultField.setText(String.valueOf(convertmoney.getYA())+" yarım altınınız var.");
+                resultField.setText(String.valueOf(convertmoney.getYA())+" yarım altın.");
             }
         else if(selectComboBox.equals("Gram Altın")){
                 convertmoney.setGA(turkishLira,GA);
-                resultField.setText(String.valueOf(convertmoney.getGA())+" gram altınınız var.");
+                resultField.setText(String.valueOf(convertmoney.getGA())+" gram altın.");
             }
         else if(selectComboBox.equals("Gümüş")){
                 convertmoney.setGU(turkishLira,GU);
-                resultField.setText(String.valueOf(convertmoney.getGU())+" gram gümüşünüz var.");
+                resultField.setText(String.valueOf(convertmoney.getGU())+" gram gümüş.");
             }
         {
             
@@ -664,7 +659,6 @@ public class Jframe extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
@@ -693,15 +687,21 @@ public class Jframe extends javax.swing.JFrame {
     private javax.swing.JTextField resultField;
     private javax.swing.JTextField salary;
     private javax.swing.JComboBox<String> selectComboBox;
-    private javax.swing.JTextField tc;
     private javax.swing.JTextField turkishliraField;
     private javax.swing.JTextField usdValue;
     // End of variables declaration//GEN-END:variables
-  
+
+    private int length(JTextField tc) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+ 
+
+}
+
 
     
     
       
     
     
-}
+
