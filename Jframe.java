@@ -37,6 +37,7 @@ public class Jframe extends javax.swing.JFrame {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jSeparator1 = new javax.swing.JSeparator();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel3 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -146,12 +147,16 @@ public class Jframe extends javax.swing.JFrame {
             }
         });
 
+        buttonGroup1.add(jRadioButton1);
         jRadioButton1.setText("6");
 
+        buttonGroup1.add(jRadioButton2);
         jRadioButton2.setText("12");
 
+        buttonGroup1.add(jRadioButton3);
         jRadioButton3.setText("18");
 
+        buttonGroup1.add(jRadioButton4);
         jRadioButton4.setText("24");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -639,6 +644,7 @@ public class Jframe extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton calculate;
     private javax.swing.JButton convertButton;
     private javax.swing.JTextField demandingMoney;
